@@ -1,5 +1,5 @@
 from flask import *  
-import sqlite3  
+import sqlite3
   
 app = Flask(__name__)  
  
@@ -66,7 +66,6 @@ def view():
     rows = cur.fetchall()  
     return render_template("view.html",rows = rows)  
  
- 
 @app.route("/delete")  
 def delete():  
     return render_template("delete.html")  
@@ -75,7 +74,7 @@ def delete():
 def deleterecord():  
     id = request.form["id"]  
     with sqlite3.connect("employee.db") as con:  
-        try:  
+        try:
             cur = con.cursor()  
             cur.execute("delete from Employees where id = ?",id)  
             msg = "record successfully deleted"  
