@@ -1,7 +1,7 @@
-version:"3.7"
+version: "3.7"
 services:
-    Application:
-        build:Application
+    web:
+        build: application
         restart: always
         ports:
-            -5001:5001
+            - 5001:5001
